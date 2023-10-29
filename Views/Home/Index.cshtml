@@ -1,0 +1,77 @@
+﻿    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="/Content/images/favicon.ico">
+
+        <title>Sign Up</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="/Content/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="/Content/form-validation.css" rel="stylesheet">
+    </head>
+    <body class="bg-light">
+
+        <div class="container">
+            <div class="py-5 text-center">
+                <h2>Метод #1</h2>
+                <p class="lead">
+                    С помощью цикла.
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-md-8 order-md-1">
+                    @using (Html.BeginForm("CopyEvenLinesWithCycle", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <div>
+                            <label for="file">Выберите файл, который необходимо обработать (1) (txt):</label>
+                            <input type="file" name="sourceFile" id="sourceFile" accept=".txt" required />
+                            <label for="file">Выберите файл, который необходимо обработать (2) (txt):</label>
+                            <input type="file" name="targetFile" id="targetFile" accept=".txt" required />
+
+                        </div>
+                        <p>&nbsp</p>
+
+                        <input class="btn btn-primary" type="submit" value="Выполнить" />
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="py-5 text-center">
+                <h2>Метод #2</h2>
+                <p class="lead">
+                    С помощью LINQ запроса.
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-md-8 order-md-1">
+                    @using (Html.BeginForm("CopyEvenLinesWithLINQ", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <div>
+                            <label for="file">Выберите файл, который необходимо обработать (1) (txt):</label>
+                            <input type="file" name="sourceFile" id="sourceFile" accept=".txt" required />
+                            <label for="file">Выберите файл, который необходимо обработать (2) (txt):</label>
+                            <input type="file" name="targetFile" id="targetFile" accept=".txt" required />
+
+                        </div>
+                        <p>&nbsp</p>
+
+                        <input class="btn btn-primary" type="submit" value="Выполнить" />
+
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="/scripts/jquery-slim.min.js"></script>
+        <script src="/scripts/popper.min.js"></script>
+        <script src="/scripts/bootstrap.min.js"></script>
+        <script src="/scripts/holder.min.js"></script>
+    </body>
